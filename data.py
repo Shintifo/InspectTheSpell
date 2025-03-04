@@ -6,7 +6,7 @@ def find_words(text):
 	return re.findall(r'\w+', text.lower())
 
 
-VOCAB = Counter(find_words(open("big.txt").read()))
+VOCAB = Counter(find_words(open("data/big.txt").read()))
 INDIR_BIGRAM = {}
 DIR_BIGRAM = {}
 
@@ -80,7 +80,7 @@ def read_files():
 
 def prep_data():
 	global VOCAB
-	VOCAB = Counter(find_words(open("big.txt").read()))
+	VOCAB = Counter(find_words(open("data/big.txt").read()))
 	read_files()
 
 	calc_probs(DIR_BIGRAM)
